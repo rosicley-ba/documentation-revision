@@ -73,10 +73,9 @@ def create_modified_html(file_name: str, file_name_to_save: str):
         for old_part, new_part in zip(old_parts, new_parts):
             modified_html = modified_html.replace(old_part, new_part)
 
-    # sou = soup.decode('soup')
     pretty_HTML = soup.prettify()
     with open(file_name_to_save, "w", encoding="UTF8") as new_file:
-        new_file.write(modified_html.strip())
+        new_file.write(pretty_HTML.strip())
 
 
 create_modified_html("original.html", "General Ansible Troubleshooting.html")
